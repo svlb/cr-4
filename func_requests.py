@@ -1,6 +1,11 @@
 from abc import ABC, abstractmethod
 
+import os
+from wsgiref import headers
+
 import requests
+
+API_KEY = os.getenv()
 
 
 class Vacancy(ABC):
@@ -76,7 +81,6 @@ class HHVacancyAPI:
         response = requests.get(self.URL, params=params)
         if response.status_code == 200:
             data = response.json()
-            self.total = data["found"]
             vacancies = data["items"]
             for v in vacancies:
                 salary = None
@@ -97,23 +101,20 @@ class SuperjobVacancyAPI:
         self.search_text = search_text
         self.total = None
 
-    def get_vacancies(self):
-        self.total = None
 
         def get_vacancies(self):
-            headers = {"X-Api-App-Id": self.api_key}
-            params = {"keyword": self.search_text, "town": "Москва"}
+             headers = {"X-Api-App-Id": self.api_key}
+        params = {"keyword": self.search_text, "town": "Москва"}
 
-            response = requests.get(self.BASE_URL, headers=headers, params=params)
-            if response.status_code == 200:
-                data = response.json()
-                self.total = data["found"]
-                vacancies = data["objects"]
-                for v in vacancies:
-                    salary = None
-                    if v["currency"] == "rub":
-                        superjob_vacancy = SuperjobVacancy(v["profession"], v["link"], v["payment_from"],
-                                                           v['client']['title'])
-                        yield superjob_vacancy
-                    else:
+        response = requests.get(self.BASE_URL, headers=headers, params=params)
+        if response.status_code == 200:
+            data = response.json()
+            self.total = data["found"]
+            vacancies = data["objects"]
+        for v in vacancies:
+                 salary = None
+                 if v["currency"] == "rub":
+                    superjob_vacancy = SuperjobVacancy(v["profession"], v["link"], v["payment_from"],v['client']['title'])
+                    yield superjob_vacancy
+                 else:
                         raise Exception("Failed to fetch vacancies from SuperJob API")
