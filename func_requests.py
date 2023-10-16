@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 import os
+
 import requests
 
 api_key = os.getenv("X-Api-App-Id")
@@ -96,6 +97,7 @@ class SuperjobVacancyAPI:
     BASE_URL = "https://api.superjob.ru/2.0/vacancies"
 
     def __init__(self, search_text):
+        global vacancies
         self.search_text = search_text
         self.total = None
 
@@ -116,3 +118,6 @@ class SuperjobVacancyAPI:
                     yield superjob_vacancy
                  else:
                         raise Exception("Failed to fetch vacancies from SuperJob API")
+
+    def get_vacancies(self):
+        pass
