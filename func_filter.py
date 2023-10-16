@@ -1,6 +1,3 @@
-
-
-
 def get_salary_input(min_salary):
     while True:
         try:
@@ -22,3 +19,4 @@ def get_sites_input(selected_sites):
             return selected_sites
         else:
             print("Не все введенные сайты доступны. Попробуйте еще раз.")
+            break

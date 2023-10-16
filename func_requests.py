@@ -6,13 +6,14 @@ import requests
 
 api_key = os.getenv("X-Api-App-Id")
 
+
 class Vacancy(ABC):
     """Абстрактный класс для работы с вакансиями"""
 
     @abstractmethod
     def __init__(self, title, link, salary, employer):
         """Конструктор класса"""
-        pass
+        self.title = None
 
     @abstractmethod
     def compare_salary(self, other_vacancy):
@@ -96,13 +97,13 @@ class SuperjobVacancyAPI:
     BASE_URL = "https://api.superjob.ru/2.0/vacancies"
 
     def __init__(self, search_text):
+        self.api_key = None
         global vacancies
         self.search_text = search_text
         self.total = None
 
-
-        def get_vacancies(self):
-             headers = {"X-Api-App-Id": self.api_key}
+    def get_vacancies(self):
+        headers = {"X-Api-App-Id": self.api_key}
         params = {"keyword": self.search_text, "town": "Москва"}
 
         response = requests.get(self.BASE_URL, headers=headers, params=params)
@@ -110,13 +111,14 @@ class SuperjobVacancyAPI:
             data = response.json()
             self.total = data["found"]
             vacancies = data["objects"]
-        for v in vacancies:
-                 salary = None
-                 if v["currency"] == "rub":
-                    superjob_vacancy = SuperjobVacancy(v["profession"], v["link"], v["payment_from"],v['client']['title'])
+            for v in vacancies:
+                salary = None
+                if v["currency"] == "rub":
+                    superjob_vacancy = SuperjobVacancy(v["profession"], v["link"], v["payment_from"]
+                                                       , v['client']['title'])
                     yield superjob_vacancy
-                 else:
-                        raise Exception("Failed to fetch vacancies from SuperJob API")
+                else:
+                    raise Exception("Failed to fetch vacancies from SuperJob API")
 
     def get_vacancies(self):
         pass
