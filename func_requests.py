@@ -14,6 +14,9 @@ class Vacancy(ABC):
     def __init__(self, title, link, salary, employer):
         """Конструктор класса"""
         self.title = None
+        self.link = None
+        self.salary = None
+        self.employer= None
 
     @abstractmethod
     def compare_salary(self, other_vacancy):
