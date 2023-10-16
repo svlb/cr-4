@@ -6,7 +6,6 @@ import requests
 
 api_key = os.getenv("X-Api-App-Id")
 
-
 class Vacancy(ABC):
     """Абстрактный класс для работы с вакансиями"""
 
