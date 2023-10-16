@@ -103,7 +103,7 @@ class SuperjobVacancyAPI:
         self.total = None
 
     def get_vacancies(self):
-        headers = {"X-Api-App-Id": self.api_key}
+        headers = {"X-Api-App-Id"}
         params = {"keyword": self.search_text, "town": "Москва"}
 
         response = requests.get(self.BASE_URL, headers=headers, params=params)
