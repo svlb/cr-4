@@ -23,6 +23,7 @@ def run_console_app(min_salary=None, selected_sites=None):
 
     if selected_sites is None or "superjob" in selected_sites:
         print("\nПолучение вакансий с Superjob...")
+        sj_api = SuperjobVacancyAPI(search_text)
 
 
     # получаем вакансии с каждой платформы

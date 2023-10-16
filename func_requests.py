@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 
 import requests
 
+
 class Vacancy(ABC):
     """Абстрактный класс для работы с вакансиями"""
 
@@ -39,6 +40,7 @@ class HHVacancy(Vacancy):
         else:
             return self.salary > other_vacancy.salary
 
+
 class SuperjobVacancy(Vacancy):
     """Класс для работы с вакансиями на сайте superjob.ru"""
 
@@ -57,6 +59,7 @@ class SuperjobVacancy(Vacancy):
             return 1
         else:
             return self.salary > other_vacancy.salary
+
 
 class HHVacancyAPI:
     """Класс для работы с API сайта hh.ru"""
@@ -84,6 +87,7 @@ class HHVacancyAPI:
         else:
             raise Exception("Failed to fetch vacancies from HH API")
 
+
 class SuperjobVacancyAPI:
     """Класс для работы с API сайта superjob.ru"""
 
@@ -91,20 +95,25 @@ class SuperjobVacancyAPI:
 
     def __init__(self, search_text):
         self.search_text = search_text
-        self.api_key = "v3.r.137806889.01aa2f9635eab9a52783619a13c2c30790e4df13.46bc00e41619d70bd0524ae9e7573e6962dda4ff"
+        self.total = None
 
     def get_vacancies(self):
-        headers = {"X-Api-App-Id": self.api_key}
-        params = {"keyword": self.search_text, "town": "Москва"}
+        self.total = None
 
-        response = requests.get(self.BASE_URL, headers=headers, params=params)
-        if response.status_code == 200:
-            data = response.json()
-            self.total = data["total"]
-            vacancies = data["objects"]
-            for v in vacancies:
-                if v["currency"] == "rub":
-                    superjob_vacancy = SuperjobVacancy(v["profession"], v["link"], v["payment_from"], v['client']['title'])
-                    yield superjob_vacancy
-        else:
-            raise Exception("Failed to fetch vacancies from SuperJob API")
+        def get_vacancies(self):
+            headers = {"X-Api-App-Id": self.api_key}
+            params = {"keyword": self.search_text, "town": "Москва"}
+
+            response = requests.get(self.BASE_URL, headers=headers, params=params)
+            if response.status_code == 200:
+                data = response.json()
+                self.total = data["found"]
+                vacancies = data["objects"]
+                for v in vacancies:
+                    salary = None
+                    if v["currency"] == "rub":
+                        superjob_vacancy = SuperjobVacancy(v["profession"], v["link"], v["payment_from"],
+                                                           v['client']['title'])
+                        yield superjob_vacancy
+                    else:
+                        raise Exception("Failed to fetch vacancies from SuperJob API")
