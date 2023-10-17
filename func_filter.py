@@ -8,6 +8,7 @@ def get_salary_input(min_salary):
                 print("Пожалуйста, введите положительное число.")
         except ValueError:
             print("Пожалуйста, введите корректное число.")
+            break
 
 
 def get_sites_input(selected_sites):

@@ -13,10 +13,7 @@ class Vacancy(ABC):
     @abstractmethod
     def __init__(self, title, link, salary, employer):
         """Конструктор класса"""
-        self.title = None
-        self.link = None
-        self.salary = None
-        self.employer= None
+        pass
 
     @abstractmethod
     def compare_salary(self, other_vacancy):
@@ -106,7 +103,7 @@ class SuperjobVacancyAPI:
         self.total = None
 
     def get_vacancies(self):
-        headers = {"X-Api-App-Id"}
+        headers = {"X-Api-App-Id": "api_key"}
         params = {"keyword": self.search_text, "town": "Москва"}
 
         response = requests.get(self.BASE_URL, headers=headers, params=params)
@@ -123,5 +120,5 @@ class SuperjobVacancyAPI:
                 else:
                     raise Exception("Failed to fetch vacancies from SuperJob API")
 
-    def get_vacancies(self):
-        pass
+def get_vacancies(self):
+    pass
