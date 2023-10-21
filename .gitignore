@@ -1,5 +1,5 @@
 .venv
 .idea
-venv
-myapp
-idea
+venv/
+myapp/
+idea/
