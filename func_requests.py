@@ -97,8 +97,6 @@ class SuperjobVacancyAPI:
     BASE_URL = "https://api.superjob.ru/2.0/vacancies"
 
     def __init__(self, search_text):
-        self.api_key = None
-        global vacancies
         self.search_text = search_text
         self.total = None
 

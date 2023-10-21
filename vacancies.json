@@ -42,28 +42,28 @@
         "employer": "\u0421\u0442\u0440\u043e\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0439 \u0414\u0432\u043e\u0440"
     },
     {
-        "title": "\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442 Python (Junior)",
-        "link": "https://hh.ru/vacancy/88351631",
-        "salary": 60000,
-        "employer": "\u0423\u0444\u0430\u043d\u0435\u0442"
-    },
-    {
         "title": "\u0421\u0442\u0430\u0436\u0451\u0440-\u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0449\u0438\u043a",
         "link": "https://hh.ru/vacancy/88053833",
         "salary": null,
         "employer": "Softline"
     },
     {
-        "title": "Python-\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a (Junior)",
-        "link": "https://hh.ru/vacancy/88408943",
+        "title": "\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442 Python (Junior)",
+        "link": "https://hh.ru/vacancy/88351631",
         "salary": 60000,
-        "employer": "\u0429\u0435\u0440\u0431\u0438\u043d \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447"
+        "employer": "\u0423\u0444\u0430\u043d\u0435\u0442"
     },
     {
         "title": "Python \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a (Junior)",
         "link": "https://hh.ru/vacancy/87944930",
         "salary": 60000,
         "employer": "Bewise.ai"
+    },
+    {
+        "title": "Python-\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a (Junior)",
+        "link": "https://hh.ru/vacancy/88408943",
+        "salary": 60000,
+        "employer": "\u0429\u0435\u0440\u0431\u0438\u043d \u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u0421\u0435\u0440\u0433\u0435\u0435\u0432\u0438\u0447"
     },
     {
         "title": "Junior frontend developer",
@@ -78,22 +78,10 @@
         "employer": "\u0410\u043a \u0411\u0430\u0440\u0441 \u0411\u0430\u043d\u043a"
     },
     {
-        "title": "Junior \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442/\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a Frontend backend/Junior \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a",
-        "link": "https://hh.ru/vacancy/88202140",
-        "salary": 75000,
-        "employer": "AVPOWER"
-    },
-    {
         "title": "Data Scientist",
         "link": "https://hh.ru/vacancy/87993734",
         "salary": null,
         "employer": "Ventra IT Solutions"
-    },
-    {
-        "title": "Junior QA Engineer",
-        "link": "https://hh.ru/vacancy/88383897",
-        "salary": 35000,
-        "employer": "\u0412\u0430\u0439\u0442\u043b\u0438\u0441\u0442"
     },
     {
         "title": "Python \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a",
@@ -102,15 +90,27 @@
         "employer": "Go Global"
     },
     {
-        "title": "Junior/Middle Java Developer",
-        "link": "https://hh.ru/vacancy/88448610",
+        "title": "Junior Python developer",
+        "link": "https://hh.ru/vacancy/87748672",
         "salary": null,
-        "employer": "Sitronics KT"
+        "employer": "\u0420\u0430\u0439\u0442 \u0421\u043a\u0430\u043d"
     },
     {
-        "title": "\u0421\u0442\u0430\u0436\u0435\u0440-\u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0449\u0438\u043a",
-        "link": "https://hh.ru/vacancy/88141828",
-        "salary": 16000,
-        "employer": "Neo Stack Technology"
+        "title": "Junior \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442/\u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a Frontend backend/Junior \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a",
+        "link": "https://hh.ru/vacancy/88202140",
+        "salary": 75000,
+        "employer": "AVPOWER"
+    },
+    {
+        "title": "Junior QA Engineer",
+        "link": "https://hh.ru/vacancy/88383897",
+        "salary": 35000,
+        "employer": "\u0412\u0430\u0439\u0442\u043b\u0438\u0441\u0442"
+    },
+    {
+        "title": "\u041d\u0430\u0447\u0438\u043d\u0430\u044e\u0449\u0438\u0439 Data Scientist (Computer Vision)",
+        "link": "https://hh.ru/vacancy/87512158",
+        "salary": 40000,
+        "employer": "\u0414\u0418\u0411\u0418\u042d\u0419"
     }
 ]

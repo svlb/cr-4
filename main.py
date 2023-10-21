@@ -23,7 +23,7 @@ def run_console_app(min_salary=None, selected_sites=None):
 
     if selected_sites is None or "superjob" in selected_sites:
         print("\nПолучение вакансий с Superjob...")
-        sj_api = SuperjobVacancyAPI(search_text)
+
 
     # получаем вакансии с каждой платформы
     hh_vacancies = list(hh_api.get_vacancies())
@@ -37,12 +37,14 @@ def run_console_app(min_salary=None, selected_sites=None):
         all_vacancies = [v for v in all_vacancies if v.salary is None or v.salary >= min_salary]
     sorted_vacancies = sorted(all_vacancies, key=lambda x: x.salary if x.salary else 0, reverse=True)
 
+
     # выводим на экран топ-10 вакансий
     answer = input("Показать, Топ-10 вакансий. Да/Нет").lower().split()
-    if answer != "нет" 'no':
+    if answer != "да" 'yes':
         print("Топ-10 вакансий:")
         for i, v in enumerate(sorted_vacancies[:10]):
             print(f"{i + 1}. {v.title}, зарплата: {v.salary}, работодатель: {v.employer}, ссылка: {v.link}")
+
 
     # создаем файл для сохранения вакансий
     filename = "vacancies.json"
@@ -50,8 +52,7 @@ def run_console_app(min_salary=None, selected_sites=None):
     storage.create_file()
 
     # сохраняем вакансии в файл
-    vacancy_data = [{"title": v.title, "link": v.link, "salary": v.salary, "employer": v.employer} for v in
-                    all_vacancies]
+    vacancy_data = [{"title": v.title, "link": v.link, "salary": v.salary, "employer": v.employer} for v in all_vacancies]
     storage.write_file(vacancy_data)
 
     # читаем данные из файла и выводим на экран
@@ -59,7 +60,6 @@ def run_console_app(min_salary=None, selected_sites=None):
     data_from_file = storage.read_file()
     for v in data_from_file:
         print(f"{v['title']} ({v['salary']}) ({v['employer']}) - {v['link']}")
-
 
 if __name__ == "__main__":
     run_console_app()
