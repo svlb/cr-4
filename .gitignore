@@ -3,3 +3,4 @@
 venv/
 myapp/
 idea/
+.env
