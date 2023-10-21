@@ -1,6 +1,6 @@
 .venv
 .idea
 venv/
-myapp/
+myapp/env/
 idea/
 .env
